@@ -63,47 +63,24 @@ const images = [
     description: 'Lighthouse Coast Sea',
   },
 ];
-const container = document.querySelector(".gallery");
-container.insertAdjacentHTML("beforeend", createPreview(images));
-container.addEventListener(`click`, hendleImageclick);
-console.log();
+const container = document.querySelector(".gallery-image");
+container.insertAdjacentHTML("beforeend",createScan(images))
 
 
 
-// function createPreview(arr) {
-//   return arr
-//     .map((images) => `
-//     <img class="gallery-image" src="small-image.jpg" data-source="large-image.jpg"
-//     <li class="gallery-item">
-//      <a class="gallery-link" href="large-image.jpg"> alt="Image description"></a>
-//     </li>
-//    `).Join("");
-// }
-//    console.log(createMarkup(images));
-
-// // function hendleImageclick(event) {
-// //   // console.log(event.targetven,event.carrentTarget);
-// //   if (event.targetven === event.carrentTarget) {
-// //     return;
-//   }
-//   const carrentImage = event.target.closest(".image-item");
-//  // console.log(event.carretTarget);
-//  // console.log(event.target);
-// //   console.log(carrentProduct);
-//   const imageId = carrentImage.dataset.id; 
-//   const image = image.find(item => item.id === Number(imageId));
-
-//   const instance = basicLightbox.create(`
-//   <div class ="modal">
-//    <img src="${image.img}" alt="${image.img}">
-//    <h2>${image. description}</h2>
-   
-//   </div>
-//   `)
-//   instance.show();
-//   }
-  
-//   // console.log(productId);
-//   // console.log(typeof productId);
-//  //console.log(product);
-//  //console.log(window);
+function createScan(arr) {
+  return arr
+    .map((image) => `
+    <img
+      class="gallery-image"
+      src="${small - image.jpg}"
+      data-source="${large-image.jpg}"
+    <li class="gallery-item">
+  <a class="${gallery-link}" href="${large-image.jpg}">
+      alt="${image-description}"
+    />
+  </a>
+</li>
+    `)
+}
+console.log(createScan(images));
