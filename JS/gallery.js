@@ -63,24 +63,40 @@ const images = [
     description: 'Lighthouse Coast Sea',
   },
 ];
-const container = document.querySelector(".gallery-image");
-container.insertAdjacentHTML("beforeend",createScan(images))
 
 
+const container = document.querySelector(".images");
+container.insertAdjacentHTML("beforeend", createScan(images));
+container.addEventListener(`click`.handleImageClick);
 
 function createScan(arr) {
-  return arr
-    .map((image) => `
+  return arr.map((image) => ` 
     <img
       class="gallery-image"
       src="${small - image.jpg}"
-      data-source="${large-image.jpg}"
+      data-source="${large - image.jpg}"
     <li class="gallery-item">
-  <a class="${gallery-link}" href="${large-image.jpg}">
-      alt="${image-description}"
-    />
+  <a class="gallery-link" href="${large - image.jpg}">
+      alt="${image-description}">
   </a>
 </li>
-    `)
+
+  `).join('');
 }
-console.log(createScan(images));
+
+
+function handleImageClick(event) {
+ console.log(event.target,event.currentTarget);
+  if (event.target === event.currentTarget) {
+    return
+  }
+  const currentImage = event.target.closest("gallery-item");
+  const instanse = basicLightbox.create(`
+  <div class="modal">
+  <img src="${image.img}" alt="${image-description}"> 
+  <p>"${image.description}"</p>
+  </div>
+  `);
+  instanse.show();
+
+}
