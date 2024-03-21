@@ -73,11 +73,12 @@ function createScan(arr) {
   return arr.map((image) => ` 
     <img
       class="gallery-image"
-      src="${small - image.jpg}"
-      data-source="${large - image.jpg}"
+      src="${image.preview}"
+      data-source="${image.original}"
+      alt="${image.description}">
     <li class="gallery-item">
   <a class="gallery-link" href="${large - image.jpg}">
-      alt="${image-description}">
+      
   </a>
 </li>
 
@@ -85,12 +86,14 @@ function createScan(arr) {
 }
 
 
+
 function handleImageClick(event) {
- console.log(event.target,event.currentTarget);
+  const image = event.target.dataset.source;
+ //console.log(event.target,event.currentTarget);
   if (event.target === event.currentTarget) {
     return
   }
-  const currentImage = event.target.closest("gallery-item");
+  const currentImage = event.target.closest(".gallery-item");
   const instanse = basicLightbox.create(`
   <div class="modal">
   <img src="${image.img}" alt="${image-description}"> 
