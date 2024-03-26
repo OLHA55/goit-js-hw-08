@@ -66,6 +66,7 @@ const images = [
 
 
 const container = document.querySelector(".images");
+
 container.insertAdjacentHTML("beforeend", createScan(images));
 container.addEventListener(`click`.handleImageClick);
 
@@ -89,7 +90,7 @@ function createScan(arr) {
 
 function handleImageClick(event) {
   const image = event.target.dataset.source;
- //console.log(event.target,event.currentTarget);
+
   if (event.target === event.currentTarget) {
     return
   }
