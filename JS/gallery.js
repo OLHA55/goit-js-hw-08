@@ -65,42 +65,19 @@ const images = [
 ];
 
 
-const container = document.querySelector(".images");
+const container = document.querySelector(".gallery");
+container.insertAdjacentHTML("beforeend", createMarkup(images));
 
-container.insertAdjacentHTML("beforeend", createScan(images));
-container.addEventListener(`click`.handleImageClick);
-
-function createScan(arr) {
-  return arr.map((image) => ` 
-    <img
-      class="gallery-image"
-      src="${image.preview}"
-      data-source="${image.original}"
-      alt="${image.description}">
-    <li class="gallery-item">
-  <a class="gallery-link" href="${large - image.jpg}">
-      
-  </a>
-</li>
-
-  `).join('');
+function createMarkup(arr){
+return arr
+  .map((image) => `
+  <li  class = "${gallery-item}">
+  <a class="${gallery-link}" href="${large-image}">
+  <img src="${image-preview} data-source="${image-original}" alt="${Image-description}" width = "340">
+  
+  </li>
+  `).json("");
 }
+console.log(createMarkup(images));
 
 
-
-function handleImageClick(event) {
-  const image = event.target.dataset.source;
-
-  if (event.target === event.currentTarget) {
-    return
-  }
-  const currentImage = event.target.closest(".gallery-item");
-  const instanse = basicLightbox.create(`
-  <div class="modal">
-  <img src="${image.img}" alt="${image-description}"> 
-  <p>"${image.description}"</p>
-  </div>
-  `);
-  instanse.show();
-
-}
