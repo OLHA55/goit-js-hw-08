@@ -83,6 +83,7 @@ function createMarkup(array) {
     ).join('');
 }
 gallery.addEventListener('click', galleryClickHandler);
+
 function galleryClickHandler(event) {
   event.preventDefault();
   if (event.target.nodeName !== 'IMG') {
