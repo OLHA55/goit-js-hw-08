@@ -109,7 +109,7 @@ function galleryClickHandler(event) {
       instance.close();
     }
   }
-}
+};
 
 
 
