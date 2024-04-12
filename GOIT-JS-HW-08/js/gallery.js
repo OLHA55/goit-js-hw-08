@@ -94,7 +94,7 @@ function galleryClickHandler(event) {
   const imageAlt = currentImage.alt;
   const instance = basicLightbox.create(
     `
-     <img src="${imageSource}" alt="${imageAlt}" width="1112" height="640">
+     <img src="${imageSource}" alt="${imageAlt}" width="1280" height="640">
     `,
     {
       onShow: instance => {
